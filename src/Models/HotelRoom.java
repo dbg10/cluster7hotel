@@ -44,6 +44,34 @@ public class HotelRoom {
         System.out.println("location: " + this.location);
         
     }
+    public int getId() {
+        return id;
+    }
+    public String getHotelName() {
+        return hotelName;
+    }
+    public int getPrice() {
+        return price;
+    }
+    public String getFromAvailability() {
+        return fromAvailability;
+    }
+    public String getToAvailability() {
+        return toAvailability;
+    }
+    public String getType() {
+        return type;
+    }
+    public String getTheme() {
+        return theme;
+    }
+    public int getQuality() {
+        return quality;
+    }
+    public String getLocation() {
+        return location;
+    }
+    
 }
 
 

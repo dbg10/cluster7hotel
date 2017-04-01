@@ -16,10 +16,13 @@ public class SQLiteJDBC
 {
     public static String hotelRoomTableName = "HotelRooms"; 
     
+    
+    
     private static Connection getConnection() {
         Connection conn = null;
         try {
             Class.forName("org.sqlite.JDBC");
+            //Class.forName("com.mysql.jdbc.Driver")
             conn = DriverManager.getConnection("jdbc:sqlite:hoteldatabase.db");
         } catch(Exception e) {
             System.out.println(e.getMessage());
