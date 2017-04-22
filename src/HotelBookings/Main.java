@@ -5,7 +5,7 @@
  */
 package HotelBookings;
 
-import Models.AdalFrame;
+import JFrames.AdalFrame;
 import Models.HotelRoom;
 
 /**
@@ -14,9 +14,7 @@ import Models.HotelRoom;
  */
 public class Main {
     
-    
-    
-    public static void main(String args[]) {
+    public static void setUpDatabase() {
         SQLiteJDBC.createHotelRooms();
         SQLiteJDBC.insertIntoHotelRooms(1, "Hotel Bifrost","2017-01-01","2017-12-31",28000 , "double", "Family", 2, "Sudurland");
         SQLiteJDBC.insertIntoHotelRooms(2, "Hotel Ísafjordur","2017-04-04","2017-08-21",34000 , "double", "Family", 3, "Vesturland");
@@ -76,10 +74,12 @@ public class Main {
         SQLiteJDBC.insertIntoHotelRooms(56, "Ungbarna Hotel Drífu","2017-04-02","2017-11-21" , 20000, "triple", "Family", 3, "Austurland");
         SQLiteJDBC.insertIntoHotelRooms(57, "Ungbarna Hotel Drífu","2017-04-02","2017-11-21" , 20000, "double", "Family", 3, "Austurland");
         SQLiteJDBC.insertIntoHotelRooms(58, "Emmuhótel","2017-04-02","2017-11-21" , 200000, "suite", "Romantic",4, "Norðurland");
+    }
+    
+    public static void main(String args[]) {
+        Main.setUpDatabase();
         HotelRoom model = SQLiteJDBC.getHotelForId(1);
         //HotelRoom model2 = SQLiteJDBC.getHotelForId(2);
-        
-        
         model.dump();
         
         AdalFrame frame = new AdalFrame();

@@ -31,6 +31,10 @@ public class HotelRoom {
         this.quality = quality;
         this.location = location;
     }
+
+    public HotelRoom() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     public void dump() {
         System.out.println("id: " + this.id);
@@ -72,6 +76,18 @@ public class HotelRoom {
         return location;
     }
     
+    public boolean matchesQuery(HotelRoom query) {
+        boolean hotelMatches = this.hotelName.contains(query.hotelName);
+        boolean priceMatches = (this.price == query.price || query.price == -1);
+        boolean locationMatches = this.location.contains(query.location);
+        boolean typeMatches = this.type.contains(query.type);
+        boolean themeMatches = this.theme.contains(query.theme);
+        boolean qualityMatches = this.quality == query.quality || query.quality == -1;
+        boolean fromToMatches = this.fromAvailability.contains(query.fromAvailability) && this.toAvailability.contains(query.toAvailability);
+
+        return hotelMatches && priceMatches && locationMatches && typeMatches && themeMatches && qualityMatches && fromToMatches;
+              
+    }
 }
 
 
